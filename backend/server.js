@@ -51,9 +51,8 @@ app.get('/api/health', (_req, res) => {
 })
 
 
-//since we are deploying this app on vercel so we are not using app.listen
-// app.listen(PORT, () => {
-//   console.log(`Server running on port ${PORT}`)
-// })
 
-export default app;
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`)
+})
+
