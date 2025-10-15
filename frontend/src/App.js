@@ -1,24 +1,143 @@
-import logo from './logo.svg';
-import './App.css';
+// import CustomNavbar from './components/Navbar';
+// import Hero from './components/Hero';
+// import ApplicationSection from './components/ApplicationSection';
+// import HiringPartners from './components/HiringPartners';
+// import IndustryTools from './components/IndustryToos';
+// import ProgramCurriculum from './components/Curriculum';
+// import Faculty from './components/Faculty';
+// import Portfolio from './components/Portfolio';
+// import Testimonials from './components/Testimonials';
+// import FAQ from './components/FAQ';
+// import Footer from './components/Footer';
+
+// function App() {
+//   const scrollToApplication = () => {
+//     const applicationSection = document.getElementById('application-section');
+//     if (applicationSection) {
+//       applicationSection.scrollIntoView({ behavior: 'smooth' });
+//     }
+//   };
+
+//   return (
+//     <div>
+  
+//       <CustomNavbar />
+
+
+//       <section id="overview">
+//         <Hero onApplyClick={scrollToApplication} />
+//       </section>
+
+      
+//       <section id="hiring-partners">
+//         <HiringPartners />
+//       </section>
+//       <section id="application-section">
+//         <ApplicationSection />
+//       </section>
+
+  
+//       <section id="curriculum">
+//         <ProgramCurriculum />
+//       </section>
+
+
+//       <section id="trainers">
+//         <Faculty />
+//       </section>
+
+  
+//       <section id="projects">
+//         <Portfolio />
+//       </section>
+
+
+//       <section id="success-stories">
+//         <Testimonials />
+//       </section>
+
+     
+    
+
+    
+//       <section id="faqs">
+//         <FAQ />
+//       </section>
+
+    
+//       <Footer />
+//     </div>
+//   );
+// }
+
+// export default App;
+import { Routes, Route, Navigate } from 'react-router-dom';
+import CustomNavbar from './components/Navbar';
+import Hero from './components/Hero';
+import ApplicationSection from './components/ApplicationSection';
+import HiringPartners from './components/HiringPartners';
+import IndustryTools from './components/IndustryToos';
+import ProgramCurriculum from './components/Curriculum';
+import Faculty from './components/Faculty';
+import Portfolio from './components/Portfolio';
+import Testimonials from './components/Testimonials';
+import FAQ from './components/FAQ';
+import Footer from './components/Footer';
+
+
+import CoursePage from './pages/CoursePage';
+
+function LandingPage() {
+  const scrollToApplication = () => {
+    const applicationSection = document.getElementById('application-section');
+    if (applicationSection) {
+      applicationSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  return (
+    <div>
+      <CustomNavbar />
+      <section id="overview">
+        <Hero onApplyClick={scrollToApplication} />
+      </section>
+      <section id="hiring-partners">
+        <HiringPartners />
+      </section>
+      <section id="application-section">
+        <ApplicationSection />
+      </section>
+      <section id="curriculum">
+        <ProgramCurriculum />
+      </section>
+      <section id="trainers">
+        <Faculty />
+      </section>
+      <section id="projects">
+        <Portfolio />
+      </section>
+      <section id='success-stories'>
+        <IndustryTools/>
+      </section>
+      <section id="success-stories">
+        <Testimonials />
+      </section>
+      <section id="faqs">
+        <FAQ />
+      </section>
+      <Footer />
+    </div>
+  );
+}
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Routes>
+      <Route path="/" element={<LandingPage />} />
+    
+      <Route path="/course/:enrollmentId" element={<CoursePage />} />
+      <Route path="*" element={<Navigate to="/" replace />} />
+    </Routes>
   );
 }
 
