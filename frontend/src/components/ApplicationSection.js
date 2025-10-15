@@ -4,7 +4,7 @@ import axios from 'axios';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { User, Mail, Phone, MapPin, Briefcase } from 'lucide-react';
 
-const API_BASE_URL = 'http://localhost:5001/api';
+const API_BASE_URL = 'https://imarticusb.onrender.com/api';
 
 const ApplicationSection = () => {
   const navigate = useNavigate();

@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import { PlayCircle, FileText, Sparkles, CheckCircle, Loader } from 'lucide-react';
 
-const API_BASE_URL = 'http://localhost:5001/api';
+const API_BASE_URL = 'https://imarticusb.onrender.com/api';
 
 export default function CoursePage() {
   const { enrollmentId } = useParams();
