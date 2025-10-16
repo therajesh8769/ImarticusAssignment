@@ -29,13 +29,12 @@ const corsOptions = {
   optionsSuccessStatus: 200
 }
 
-// Apply CORS middleware
 app.use(cors(corsOptions))
 
-// Body parsing middleware
+// Body parsing 
 app.use(express.json())
 
-// app.use(express.urlencoded({ extended: true }))
+
 
 
 
